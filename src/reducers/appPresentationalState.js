@@ -1,70 +1,10 @@
-// ------------------------------------
-// Constants
-// ------------------------------------
-export const OPEN_NAV = 'OPEN_SIDE_NAV'
-export const CLOSE_NAV = 'CLOSE_SIDE_NAV'
-export const TOGGLE_NAV = 'TOGGLE_SIDE_NAV'
+import sideNavReducer from '../reducers/SideNav'
+import addWorkoutReducer from '../reducers/AddWorkout'
+import { combineReducers } from 'redux'
 
-// ------------------------------------
-// Actions
-// ------------------------------------
-export function openNav () {
-  return {
-    type    : OPEN_NAV,
-    payload : true
-  }
-}
-export function closeNav () {
-  return {
-    type    : CLOSE_NAV,
-    payload : false
-  }
-}
-export function toggleNav () {
-  return {
-    type    : TOGGLE_NAV
-  }
-}
-
-export const actions = {
-  openNav,
-  closeNav
-}
-
-// ------------------------------------
-// Action Handlers
-// ------------------------------------
-const ACTION_HANDLERS = {
-  [OPEN_NAV]    : (state, action) => {
-    return {
-      ...state,
-      sideNav: { open: true }
-    }
-  },
-  [CLOSE_NAV] : (state, action) => {
-    return {
-      ...state,
-      sideNav: { open: false }
-    }
-  },
-  [TOGGLE_NAV] : (state, action) => {
-    return {
-      ...state,
-      sideNav: { open: !state.sideNav.open }
-    }
-  }
-}
-
-// ------------------------------------
-// Reducer
-// ------------------------------------
-const initialState = {
-  sideNav: {
-    open: false
-  }
-}
-export default function appPresentationalReducer (state = initialState, action) {
-  const handler = ACTION_HANDLERS[action.type]
-
-  return handler ? handler(state, action) : state
+export default () => {
+  return combineReducers({
+    sideNav: sideNavReducer,
+    addWorkout: addWorkoutReducer
+  })
 }

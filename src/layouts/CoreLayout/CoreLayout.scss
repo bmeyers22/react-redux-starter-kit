@@ -1,3 +1,8 @@
 .core-layout__viewport {
   padding-top: 4rem;
 }
+.app-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

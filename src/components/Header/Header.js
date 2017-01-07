@@ -5,15 +5,15 @@ import AppBar from 'material-ui/AppBar'
 export default class Header extends React.Component {
   static propTypes = {
     open : PropTypes.bool.isRequired,
-    toggleNav : PropTypes.func.isRequired
+    openNav : PropTypes.func.isRequired
   }
 
-  render() {
+  render () {
     return (
       <AppBar
         title='LiftLog'
         iconClassNameRight='muidocs-icon-navigation-expand-more'
-        onLeftIconButtonTouchTap={this.props.toggleNav}
+        onLeftIconButtonTouchTap={this.props.openNav}
       />
     )
   }

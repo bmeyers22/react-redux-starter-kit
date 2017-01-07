@@ -1,11 +1,9 @@
 import Header from './Header'
 import { connect } from 'react-redux'
-import { openNav, closeNav, toggleNav } from '../../reducers/appPresentationalState'
+import { openNav } from '../../reducers/SideNav'
 
 const mapDispatchToProps = {
-  openNav,
-  closeNav,
-  toggleNav
+  openNav
 }
 
 const mapStateToProps = function (state) {

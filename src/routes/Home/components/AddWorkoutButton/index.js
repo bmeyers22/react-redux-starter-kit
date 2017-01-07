@@ -1,14 +1,14 @@
-import SideNav from './SideNav'
+import AddWorkoutButton from './AddWorkoutButton'
 import { connect } from 'react-redux'
-import { closeNav } from '../../reducers/SideNav'
+import { toggleAddWorkout } from '../../../../reducers/AddWorkout'
 
 const mapDispatchToProps = {
-  closeNav
+  toggleAddWorkout
 }
 
 const mapStateToProps = function (state) {
   return {
-    open: state.appPresentational.sideNav.open
+    open: state.appPresentational.addWorkout.open
   }
 }
 
@@ -26,4 +26,4 @@ const mapStateToProps = function (state) {
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(SideNav)
+export default connect(mapStateToProps, mapDispatchToProps)(AddWorkoutButton)
