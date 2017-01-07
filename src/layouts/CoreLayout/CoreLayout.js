@@ -2,20 +2,17 @@ import React from 'react'
 import SideNav from '../../components/SideNav'
 import './CoreLayout.scss'
 import '../../styles/core.scss'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Header from '../../components/Header'
 
 export const CoreLayout = ({ children }) => (
-    <MuiThemeProvider>
-        <div className="app-container">
-          <AppBar
-            title="LiftLog"
-            iconClassNameRight="muidocs-icon-navigation-expand-more"
-          />
-          {children}
-          <SideNav docked={true} open={true}></SideNav>
-        </div>
-    </MuiThemeProvider>
+  <MuiThemeProvider>
+    <div className='app-container'>
+      <Header />
+      {children}
+      <SideNav docked={true} open={true} />
+    </div>
+  </MuiThemeProvider>
 )
 
 CoreLayout.propTypes = {

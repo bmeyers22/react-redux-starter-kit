@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import { IndexLink, Link } from 'react-router'
 import './SideNav.scss'
-import Drawer from 'material-ui/Drawer';
+import Drawer from 'material-ui/Drawer'
+import AppBar from 'material-ui/AppBar'
 
 class SideNav extends Component {
   static propTypes = {
@@ -12,6 +12,10 @@ class SideNav extends Component {
   render () {
     return (
       <Drawer docked={this.props.docked}>
+        <AppBar
+          showMenuIconButton={false}
+          title='LiftLog'
+        />
       </Drawer>
     )
   }
