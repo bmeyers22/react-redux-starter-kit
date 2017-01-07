@@ -1,6 +1,7 @@
 import AddWorkoutButton from './AddWorkoutButton'
 import { connect } from 'react-redux'
 import { toggleAddWorkout } from '../../../../reducers/AddWorkout'
+import { browserHistory } from 'react-router'
 
 const mapDispatchToProps = {
   toggleAddWorkout
@@ -8,7 +9,8 @@ const mapDispatchToProps = {
 
 const mapStateToProps = function (state) {
   return {
-    open: state.appPresentational.addWorkout.open
+    open: state.appPresentational.addWorkout.open,
+    history: browserHistory
   }
 }
 

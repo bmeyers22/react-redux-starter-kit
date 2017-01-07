@@ -11,6 +11,7 @@ const style = {
 export default class AddWorkoutButton extends Component {
   static propTypes = {
     open : PropTypes.bool.isRequired,
+    history: PropTypes.object.isRequired,
     toggleAddWorkout : PropTypes.func.isRequired
   }
 
@@ -22,6 +23,11 @@ export default class AddWorkoutButton extends Component {
 
   handleClick (e) {
     e.preventDefault()
+    if (this.props.open) {
+      this.props.history.push('/')
+    } else {
+      this.props.history.push('/addWorkout')
+    }
     this.props.toggleAddWorkout()
   }
 
