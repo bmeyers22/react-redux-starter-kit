@@ -10,7 +10,7 @@ export const CoreLayout = ({ children }) => (
     <div className='app-container'>
       <Header />
       {children}
-      <SideNav docked={true} open={true} />
+      <SideNav docked={false} open={false} />
     </div>
   </MuiThemeProvider>
 )
