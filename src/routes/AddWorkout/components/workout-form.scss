@@ -1,0 +1,14 @@
+.workout-form {
+  flex-grow: 1;
+  overflow-x: hidden;
+  position: relative;
+  .floating-action-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    .action-button {
+      margin-right: 20px;
+    }
+  }
+
+}

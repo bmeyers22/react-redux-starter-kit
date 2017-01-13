@@ -9,7 +9,9 @@ export const CoreLayout = ({ children }) => (
   <MuiThemeProvider>
     <div className='app-container'>
       <Header />
-      {children}
+      <div className='main-container'>
+        {children}
+      </div>
       <SideNav docked={false} open={false} />
     </div>
   </MuiThemeProvider>

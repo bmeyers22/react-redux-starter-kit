@@ -1,8 +1,9 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
-}
-.home-container {
+.home-index-container {
   flex-grow: 1;
+  .floating-action-container {
+    margin-right: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
 }
