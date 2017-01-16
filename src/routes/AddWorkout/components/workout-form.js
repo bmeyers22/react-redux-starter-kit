@@ -8,31 +8,38 @@ import ContentClear from 'material-ui/svg-icons/content/clear'
 import { IndexLink } from 'react-router'
 
 class WorkoutForm extends React.Component {
-  handleSubmit(evt) {
-    console.log("Form submitted", evt)
+  // Need to connect to Redux store
+  // and dispatch action directly
+
+
+  handleSubmit(val) {
+    console.log('form submitted: ', val)
+    this.props.addWorkoutEntry(val)
   }
 
   render() {
     return (
       <div className='workout-form'>
-        <Form model="workout" onSubmit={(val) => this.handleSubmit(val)}>
+        <Form model='workout' onSubmit={(val) => this.handleSubmit(val)}>
           <Control.text
-            model="workout.name"
+            model='workout.name'
             component={TextField}
             controlProps={{
               hintText: "Name your workout"
             }} />
+          <div className="floating-action-container">
+            <IndexLink to={`/`}>
+              <FloatingActionButton className='action-button' secondary>
+                <ContentClear />
+              </FloatingActionButton>
+            </IndexLink>
+            <Control.button
+              className='action-button'
+              model='workout'
+              component={FloatingActionButton}
+              type='submit' />
+          </div>
         </Form>
-        <div className="floating-action-container">
-          <IndexLink to={`/`}>
-            <FloatingActionButton className='action-button' secondary>
-              <ContentClear />
-            </FloatingActionButton>
-          </IndexLink>
-          <FloatingActionButton className='action-button' onClick={ (evt) => {this.handleSubmit(evt)} }>
-            <ActionDone />
-          </FloatingActionButton>
-        </div>
       </div>
     )
   }
