@@ -6,6 +6,7 @@ const mapDispatchToProps = {
   addWorkoutEntry
 }
 
+
 const mapStateToProps = (state) => ({})
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
