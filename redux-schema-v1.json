@@ -1,0 +1,43 @@
+rootStore: {
+  currentUser: {
+    ...user
+  },
+  entities: {
+    workouts: {
+      title: '',
+      exercises: [],
+      user: ''
+    },
+    exercises: {
+      title: '',
+      assets: [],
+      sets: []
+    },
+    sets: {
+      numberOfReps: 0,
+      weight: 0
+    },
+    users: {
+      firstName: '',
+      lastName: '',
+      userName: '',
+      workoutEntries: []
+    },
+    workoutDays: {
+      dayOfWeek: '',
+      workoutId: 0
+    }
+  },
+  forms: {
+
+  },
+  presentational: {
+    home: {
+
+    },
+    addWorkout: {
+
+    },
+
+  }
+}
