@@ -5,17 +5,22 @@ import ContentAdd from 'material-ui/svg-icons/content/add'
 import { Link } from 'react-router'
 import WorkoutList from '../containers/WorkoutList'
 
-export const HomeView = () => (
-  <div className='home-index-container'>
-    <WorkoutList />
-    <div className="floating-action-container">
-      <Link to={`/addWorkout`}>
-        <FloatingActionButton secondary>
-          <ContentAdd />
-        </FloatingActionButton>
-      </Link>
-    </div>
-  </div>
-)
+export class HomeView extends React.Component {
+
+  render() {
+    return (
+      <div className='home-index-container'>
+        <WorkoutList />
+        <div className="floating-action-container">
+          <Link to={`/app/add-workout`}>
+            <FloatingActionButton secondary>
+              <ContentAdd />
+            </FloatingActionButton>
+          </Link>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default HomeView

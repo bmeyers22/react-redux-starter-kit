@@ -1,5 +1,5 @@
 import React from 'react'
-import './workout-form.scss'
+import './WorkoutForm.scss'
 import { Control, Form } from 'react-redux-form';
 import TextField from 'material-ui/TextField'
 import FloatingActionButton from 'material-ui/FloatingActionButton'
@@ -9,7 +9,7 @@ import { IndexLink } from 'react-router'
 
 class WorkoutForm extends React.Component {
   handleSubmit(evt) {
-    console.log("Form submitted", evt)
+    this.props.addWorkout()
   }
 
   render() {
@@ -24,7 +24,7 @@ class WorkoutForm extends React.Component {
             }} />
         </Form>
         <div className="floating-action-container">
-          <IndexLink to={`/`}>
+          <IndexLink to={`/app`}>
             <FloatingActionButton className='action-button' secondary>
               <ContentClear />
             </FloatingActionButton>

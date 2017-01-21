@@ -1,7 +1,8 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const TOGGLE_NAV = 'TOGGLE_ADD_WORKOUT'
+const TOGGLE_NAV = 'TOGGLE_ADD_WORKOUT'
+const ADD_WORKOUT_ENTRY = 'ADD_WORKOUT_ENTRY'
 
 // ------------------------------------
 // Actions
@@ -12,9 +13,16 @@ export function toggleAddWorkout (value = null) {
     payload: value
   }
 }
+export function addWorkoutEntry (value = null) {
+  return {
+    type: ADD_WORKOUT_ENTRY,
+    payload: value
+  }
+}
 
 export const actions = {
-  toggleAddWorkout
+  toggleAddWorkout,
+  addWorkoutEntry
 }
 
 // ------------------------------------
@@ -26,6 +34,12 @@ const ACTION_HANDLERS = {
       ...state,
       open: action.payload ? action.payload : !state.open
     }
+  },
+  [ADD_WORKOUT_ENTRY] : (state, action) => {
+    return {
+      ...state,
+      workouts: (state.workouts || []).concat([{ name: 'New Workout' }]) // TODO: Grab from form
+    }
   }
 }
 
@@ -35,7 +49,7 @@ const ACTION_HANDLERS = {
 const initialState = {
   open: false
 }
-export default function sideNavReducer (state = initialState, action) {
+export default function addWorkoutReducer(state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 
   return handler ? handler(state, action) : state

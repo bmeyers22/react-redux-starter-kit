@@ -1,7 +1,7 @@
-import AddWorkout from './components/AddWorkout'
+import AddWorkout from './containers/AddWorkout'
 
 // Sync route definition
 export default {
-  path : '/addWorkout',
+  path : '/app/add-workout',
   component : AddWorkout
 }
