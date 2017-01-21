@@ -2,14 +2,14 @@
 import AppLayout from '../layouts/AppLayout'
 import CoreRoute from './Core'
 import LoginRoute from './Login'
-import { getLoggedInUser } from './utils'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
+
+// If you need store, pass into child routes here:
 export const createRoutes = (store) => ({
   path        : '/',
-  onEnter     : getLoggedInUser(store),
   component   : AppLayout,
   indexRoute  : LoginRoute,
   childRoutes : [

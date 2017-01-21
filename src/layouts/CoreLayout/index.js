@@ -1,3 +1,12 @@
 import CoreLayout from './CoreLayout'
+import { connect } from 'react-redux'
 
-export default CoreLayout
+const mapStateToProps = function (state) {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoreLayout)

@@ -8,7 +8,6 @@ import { Card, CardHeader, CardActions } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 
 class LoginLayout extends React.Component {
-
   render () {
     return (
       <MuiThemeProvider>

@@ -3,11 +3,13 @@ import Home from '../Home'
 import AddWorkoutRoute from '../AddWorkout'
 
 // Sync route definition
-export default {
-  path        : '/',
+export const createRoutes = {
+  path        : '/app',
   component   : CoreLayout,
   indexRoute  : Home,
   childRoutes : [
     AddWorkoutRoute
   ]
 }
+
+export default createRoutes
