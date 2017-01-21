@@ -1,6 +1,6 @@
 export default {
   id: '',
   _new: true,
-  name: '',
+  title: '',
   exercises: []
 }

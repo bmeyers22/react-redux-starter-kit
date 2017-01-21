@@ -25,10 +25,10 @@ export function getWorkout (user) {
     })
   }
 }
-export function addWorkoutEntry (value = null) {
+export function addWorkoutEntry (workout) {
   return {
     type: ADD_WORKOUT_ENTRY,
-    payload: value
+    payload: workout
   }
 }
 
@@ -51,7 +51,7 @@ const ACTION_HANDLERS = {
   [ADD_WORKOUT_ENTRY] : (state, action) => {
     return Object.assign({}, state, {
       100: {
-        title: 'New Workout',
+        title: action.payload.title,
         id: 100
       }
     })

@@ -6,7 +6,7 @@ export class AddWorkout extends React.Component {
   render() {
     return (
       <div className="add-workout-container">
-        <WorkoutForm addWorkout={this.props.addWorkoutEntry.bind(this)} />
+        <WorkoutForm workout={this.props.workout} addWorkout={this.props.addWorkoutEntry.bind(this)} />
       </div>
     )
   }

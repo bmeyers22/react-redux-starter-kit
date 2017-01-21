@@ -9,7 +9,7 @@ import { IndexLink } from 'react-router'
 
 class WorkoutForm extends React.Component {
   handleSubmit(evt) {
-    this.props.addWorkout()
+    this.props.addWorkout(this.props.workout)
   }
 
   render() {
@@ -17,7 +17,7 @@ class WorkoutForm extends React.Component {
       <div className='workout-form'>
         <Form model="workout" onSubmit={(val) => this.handleSubmit(val)}>
           <Control.text
-            model="workout.name"
+            model="workout.title"
             component={TextField}
             controlProps={{
               hintText: "Name your workout"

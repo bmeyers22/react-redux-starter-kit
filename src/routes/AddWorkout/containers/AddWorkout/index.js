@@ -7,7 +7,9 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = function (state) {
-  return {}
+  return {
+    workout: state.forms.workout
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddWorkout)
