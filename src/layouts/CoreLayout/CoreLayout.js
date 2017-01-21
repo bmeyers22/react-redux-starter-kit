@@ -7,7 +7,7 @@ import Header from '../../components/Header'
 
 export const CoreLayout = ({ children }) => (
   <MuiThemeProvider>
-    <div className='app-container'>
+    <div className='core-container'>
       <Header />
       <div className='main-container'>
         {children}

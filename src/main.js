@@ -8,13 +8,22 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin()
 
+window.___INITIAL_STATE__ = {
+  currentUser: {
+    id: 1,
+    firstName: 'name',
+    lastName: 'lastName',
+    userName: 'firstUser'
+  }
+}
+
 
 // ========================================================
 // Store Instantiation
 // ========================================================
 const initialState = window.___INITIAL_STATE__
 const store = createStore(initialState)
-
+window.debugStore = store
 // ========================================================
 // Render Setup
 // ========================================================
