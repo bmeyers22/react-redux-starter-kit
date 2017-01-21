@@ -4,7 +4,6 @@ import { combineReducers } from 'redux'
 
 export default () => {
   return combineReducers({
-    sideNav: sideNavReducer,
-    addWorkout: addWorkoutReducer
+    sideNav: sideNavReducer
   })
 }

@@ -1,6 +1,6 @@
 import AddWorkout from './AddWorkout'
 import { connect } from 'react-redux'
-import { addWorkoutEntry } from 'reducers/AddWorkout'
+import { addWorkoutEntry } from 'reducers/entities/Workouts'
 
 const mapDispatchToProps = {
   addWorkoutEntry

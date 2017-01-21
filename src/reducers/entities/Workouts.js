@@ -2,6 +2,7 @@
 // Constants
 // ------------------------------------
 export const GET_WORKOUT = 'GET_WORKOUT'
+export const ADD_WORKOUT_ENTRY = 'ADD_WORKOUT_ENTRY'
 
 // ------------------------------------
 // Actions
@@ -24,9 +25,16 @@ export function getWorkout (user) {
     })
   }
 }
+export function addWorkoutEntry (value = null) {
+  return {
+    type: ADD_WORKOUT_ENTRY,
+    payload: value
+  }
+}
 
 export const actions = {
-  getWorkout
+  getWorkout,
+  addWorkoutEntry
 }
 
 // ------------------------------------
@@ -37,6 +45,14 @@ const ACTION_HANDLERS = {
     return Object.assign({}, state, {
       entities: {
         workouts: action.payload
+      }
+    })
+  },
+  [ADD_WORKOUT_ENTRY] : (state, action) => {
+    return Object.assign({}, state, {
+      100: {
+        title: 'New Workout',
+        id: 100
       }
     })
   }
